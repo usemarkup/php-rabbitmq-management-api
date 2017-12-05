@@ -59,7 +59,7 @@ class Client
      * @param  string|resource|array $body     Entity body of request (POST/PUT) or response (GET)
      * @return array
      */
-    public function send($endpoint, $method = 'GET', $headers = null, $body = null)
+    public function send($endpoint, $method = 'GET', $headers = [], $body = null)
     {
         if (null !== $body) {
             $body = json_encode($body);
