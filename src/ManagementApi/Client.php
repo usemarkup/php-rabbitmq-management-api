@@ -53,7 +53,7 @@ class Client
     }
 
     /**
-     * @param  string|array          $endpoint Resource URI.
+     * @param  string                $endpoint Resource URI.
      * @param  string                $method
      * @param  array                 $headers  HTTP headers
      * @param  string|resource|array $body     Entity body of request (POST/PUT) or response (GET)

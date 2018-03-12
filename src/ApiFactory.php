@@ -2,6 +2,7 @@
 
 namespace Markup\RabbitMq;
 
+use function GuzzleHttp\uri_template;
 use Markup\RabbitMq\ManagementApi\Api;
 use Markup\RabbitMq\ManagementApi\Client as RabbitMqApiClient;
 
@@ -37,7 +38,7 @@ class ApiFactory
      */
     public function alivenessTest($vhost)
     {
-        return $this->client->send(['/api/aliveness-test/{vhost}', ['vhost' => $vhost]]);
+        return $this->client->send(uri_template('/api/aliveness-test/{vhost}', ['vhost' => $vhost]));
     }
 
     /**
