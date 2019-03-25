@@ -68,7 +68,12 @@ class Client
             $headers['Content-Type'] = 'application/json';
         }
 
-        $response = $this->client->send(new Request($method, $endpoint, $headers, $body));
+        $response = $this->client->send(
+            new Request($method, $endpoint, $headers, $body),
+            [
+                'auth' => [$this->username, $this->password],
+            ]
+        );
 
         return json_decode($response->getBody(), true);
     }
